@@ -10,11 +10,15 @@ import scala.concurrent.{ExecutionContext => EC, _}
   *
   * GET http://example.com/1
   * GET http://example.com/2
+  * GET http://example.com/1
   * GET http://example.com/3
+  * GET http://example.com/1
   *
   * into a single request:
   *
-  * GET http://example.com/1,2,3
+  * GET http://example.com/1
+  * GET http://example.com/2
+  * GET http://example.com/3
   *
   * We're just assuming we only access web services that permit this optimization.
   * A real system would have to distinguish between requests that can be merged and ones that cannot.
